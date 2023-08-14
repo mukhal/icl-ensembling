@@ -14,21 +14,46 @@ The code here is largely based on this [repository](https://github.com/Alrope123
 cd preprocess/
 python _build_gym.py --build --n_proc=40 --do_test --test_k 16
 ```
-### 2. Run few-shot experiment with ensembling 
-```
+### 2. Run few-shot learning 
+
+#### Weighted ensembling no clustering 
+```bash
 DATASET_NAME=glue-sst2 
 N_DEMOS=10 # number of demos
 NBUCKETS=5 # number of demo buckets
 ENS_METHOD=max # max, MoE, or PoE
-WEIGHTED=true # whether to weigh buckets by similarity with test example 
-CLUSTER=false # whether to use cluster the demos into bins 
+WEIGHTED=true # whether to weigh buckets by similarity with a test example 
+CLUSTER=false # whether to use cluster the demos into bins
+BSZ=64 # batch size 
 
 python test.py --max_length 1024 --model $MODEL --use_demonstrations \
-               --out_results_dir $OUTDIR --test_batch_size $BSZ \
+               --out_results_dir $OUTDIR \
+               --test_batch_size $BSZ \
                --k $N_DEMOS \
                --n_ensemble $NBINS \
                --ensemble_method $ENS_METHOD \
                --dist_ensemble $WEIGHTED \
                --cluster_demos true \
-               --dissimilar_together false true
 ```
+
+#### Weighted ensembling with similar-together clustering 
+```bash
+DATASET_NAME=glue-sst2 
+N_DEMOS=10 # number of demos
+NBUCKETS=5 # number of demo buckets
+ENS_METHOD=max # max, MoE, or PoE
+WEIGHTED=true # whether to weigh buckets by similarity with a test example 
+CLUSTER=true # whether to use cluster the demos into bins
+BSZ=64 # batch size 
+
+python test.py --max_length 1024 --model $MODEL --use_demonstrations \
+               --out_results_dir $OUTDIR \
+               --test_batch_size $BSZ \
+               --k $N_DEMOS \
+               --n_ensemble $NBINS \
+               --ensemble_method $ENS_METHOD \
+               --dist_ensemble $WEIGHTED \
+               --cluster_demos true \
+               --dissimilar_together false
+```
+For diverse clustering, pass `--dissimilar_together true`. For similar-together clustering, pass `--dissimilar_together false` 
