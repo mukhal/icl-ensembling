@@ -12,6 +12,7 @@ cd preprocess/
 python _build_gym.py --build --n_proc=40 --do_test --test_k 16
 ```
 ### 2. Run few-shot experiment with ensembling 
+```
 DATASET_NAME=glue-sst2 
 N_DEMOS=10 # number of demos
 NBUCKETS=5 # number of demo buckets
@@ -27,3 +28,4 @@ python test.py --max_length 1024 --model $MODEL --use_demonstrations \
                --dist_ensemble $WEIGHTED \
                --cluster_demos true \
                --dissimilar_together false true
+```
