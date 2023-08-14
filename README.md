@@ -5,6 +5,9 @@ published at the workshop on understanding foundation models at ICLR 2023.
 
 The code here is largely based on this [repository](https://github.com/Alrope123/rethinking-demonstrations), so many thanks to the authors of that amazing repo! 
 
+<img width="1008" alt="image" src="https://github.com/mukhal/icl-ensembling/assets/5109053/4313c9b5-c50a-4fb5-8562-93ab611a007d">
+
+
 
 ### 1. Preprocess and prepare data. 
 ```
