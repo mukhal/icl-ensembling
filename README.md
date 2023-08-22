@@ -1,6 +1,6 @@
 # Exploring Demonstration Ensembling for In-context Learning
 
-This is code for our paper Exploring Demonstration Ensembling for In-context Learning
+This is code for our [paper](https://arxiv.org/abs/2308.08780) Exploring Demonstration Ensembling for In-context Learning
 published at the workshop on understanding foundation models at ICLR 2023. 
 
 The code here is largely based on this [repository](https://github.com/Alrope123/rethinking-demonstrations), so many thanks to the authors of that amazing repo! 
