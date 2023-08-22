@@ -9,10 +9,11 @@ The code here is largely based on this [repository](https://github.com/Alrope123
 
 
 
-### 1. Preprocess and prepare data. 
+### 1. Preprocess and prepare data for 6 and 10-shot. 
 ```
 cd preprocess/
-python _build_gym.py --build --n_proc=40 --do_test --test_k 16
+python _build_gym.py --build --n_proc=40 --do_test --test_k 6
+python _build_gym.py --build --n_proc=40 --do_test --test_k 10
 ```
 ### 2. Run few-shot learning 
 
