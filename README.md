@@ -58,3 +58,15 @@ python test.py --max_length 1024 --model $MODEL --use_demonstrations \
                --dissimilar_together false
 ```
 For diverse clustering, pass `--dissimilar_together true`. For similar-together clustering, pass `--dissimilar_together false` 
+
+
+### Citation
+If you use this code, please consider citing our paper:
+```
+@inproceedings{khalifa2023exploring,
+  title={Exploring Demonstration Ensembling for In-context Learning},
+  author={Khalifa, Muhammad and Logeswaran, Lajanugen and Lee, Moontae and Lee, Honglak and Wang, Lu},
+  booktitle={ICLR 2023 Workshop on Mathematical and Empirical Understanding of Foundation Models},
+  year={2023}
+}
+```
