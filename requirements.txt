@@ -6,3 +6,4 @@ k-means-constrained
 sacred
 neptune-client[sacred]
 torch
+numpy
