@@ -1,0 +1,8 @@
+transformers
+sentence_transformers
+guildai
+datasets
+k-means-constrained
+sacred
+neptune-client[sacred]
+torch
